@@ -16,28 +16,31 @@ public class MainPractise implements Cloneable {
     
     public static void main(String[] args) {        
         
-        ArrayList<Integer> unsortedArray = new ArrayList<Integer>();
+        ArrayList<Employees> unsortedArray = new ArrayList<Employees>();
         
-        unsortedArray.add(8);
-        unsortedArray.add(7);
-        unsortedArray.add(6);
-        unsortedArray.add(5);
-        unsortedArray.add(4);
-        unsortedArray.add(0);
-        unsortedArray.add(2);   
+        unsortedArray.add(new Employees(5, "Tuan", 2));
+        unsortedArray.add(new Employees(6, "Hoang", 3));
+        unsortedArray.add(new Employees(8, "Nam", 5));
+        unsortedArray.add(new Employees(9, "Tien", 10));
+        unsortedArray.add(new Employees(2, "Tien", 11));
+        unsortedArray.add(new Employees(1, "Chuong", 9));
+        unsortedArray.add(new Employees(20, "Chien", 2));   
+        
         MergeSort ms = new MergeSort(unsortedArray);
         
         System.out.println("---------Initial Unsorted Array---------");
-        for(int i:ms.getSortedArray()){
-            System.out.print(i+" ");
+        
+        for (Employees unsortedArray1 : unsortedArray) {
+            unsortedArray1.print();
         }
         
- 
         ms.sortGivenArray();
         
         System.out.println("\n------------Sorted Array------------");
-        for(int i:ms.getSortedArray()){
-            System.out.print(i+" ");
+       
+        for (Employees unsortedArray1 : unsortedArray) {
+            unsortedArray1.print();
         }
+        
     }
 }
